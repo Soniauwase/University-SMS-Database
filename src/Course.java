@@ -66,4 +66,7 @@ public class Course {
                 ", courseCredit=" + courseCredit +
                 '}';
     }
+    public  void addingStudent(Student student){
+        students.add(student);
+    }
 }
