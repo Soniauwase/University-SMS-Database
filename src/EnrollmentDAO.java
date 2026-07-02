@@ -21,15 +21,15 @@ public class EnrollmentDAO {
         statement.close();
 
     }
-    public static void insertDataInEnrollment()throws  Exception{
+    public static void insertDataInEnrollment(int id, int student_id, int course_id)throws  Exception{
         String insertSql= """
                 insert into Enrollment values(?,?,?)
                 """;
         Connection connection=DataConnectivity.getConnection();
          PreparedStatement preparedStatement= connection.prepareStatement(insertSql);
-         preparedStatement.setInt(1,1009);
-         preparedStatement.setInt(2,102);
-         preparedStatement.setInt(3,4);
+         preparedStatement.setInt(1,id);
+         preparedStatement.setInt(2,student_id);
+         preparedStatement.setInt(3,course_id);
         preparedStatement.executeUpdate();
         connection.close();
         preparedStatement.close();
