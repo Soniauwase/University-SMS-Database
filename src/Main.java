@@ -34,6 +34,7 @@ public class Main {
                         running=false;
                         System.out.println("thank you for visiting us,you are welcome again ");
                     }
+                    default -> System.out.println("invalid choice input,choose between number 1 to 9");
 
 
                 }
