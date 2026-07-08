@@ -37,15 +37,8 @@ public class Student extends Person{
         this.enrolledCourses = enrolledCourses;
     }
 
-    @Override
-    public String toString() {
-        return "Student{" +
-                "field='" + field + '\'' +
-                ", department='" + department + '\'' +
-                '}';
-    }
     public double calculateGpa(){
-        return 0.0;
+        return 0.0                     ;
 
     }
     // method for adding course to specific student
@@ -54,4 +47,12 @@ public class Student extends Person{
 
     }
 
+    @Override
+    public String toString() {
+        return "Student{" + " Student name= " + getName() + " student Id= "+ getId() +" email= " + getEmail() + " phone number="+ getPhoneNumber()+
+                "field='" + field + '\'' +
+                ", department='" + department + '\'' +
+                ", enrolledCourses=" + enrolledCourses +
+                '}';
+    }
 }

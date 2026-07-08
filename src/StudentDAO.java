@@ -62,13 +62,12 @@ public class StudentDAO implements IStudentDAO{
     @Override
     public void deleteStudent(int id) throws Exception {
         String DeleteSql= """
-                Delete from  (student) where id=?
+                Delete from  student where id=?
               ;
                 """;
         Connection connection = DataConnectivity.getConnection();
         PreparedStatement preparedStatement = connection.prepareStatement(DeleteSql);
-        preparedStatement.execute(DeleteSql);
-        preparedStatement.setInt(1,102);
+        preparedStatement.setInt(1,id);
         preparedStatement.executeUpdate();
         preparedStatement.close();
         connection.close();

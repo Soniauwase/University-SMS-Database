@@ -25,13 +25,19 @@ public class CourseDAO implements ICourseDAO {
     }
 
     @Override
-    public void insertCourse(int id, String course_name, String course_code, int course_credit) throws Exception {
-        String insertSql = """
-                insert into course values (?,?,?,?)
-                """;
+    public void insertCourse(int id, String course_name, String course_code, int course_credit) {
+        try {
+            String insertSql = """
+                
+                    insert into course values (?,?,?,?)
+   
 
-        Connection connection = DataConnectivity.getConnection();
+               """;
+
+        Connection connection = DataConnectivity.
+            getConnection();
         PreparedStatement preparedStatement = connection.prepareStatement(insertSql);
+
         preparedStatement.setInt(1, id);
         preparedStatement.setString(2, course_name);
         preparedStatement.setString(3, course_code);
@@ -39,7 +45,10 @@ public class CourseDAO implements ICourseDAO {
         preparedStatement.executeUpdate();
         preparedStatement.close();
         connection.close();
-    }
+    } catch (Exception e) {
+            e.printStackTrace();
+        }
+        }
 
     @Override
     public List<Course> getAllEnrolledCourse() throws Exception {
