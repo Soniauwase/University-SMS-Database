@@ -8,7 +8,6 @@ public class Main {
     public static void main(String[] args)  {
         try {
             studentDAO.createTable();
-            studentDAO.updateTable();
             courseDAO.createTable();
             EnrollmentDAO.creatingTable();
             System.out.println("Table successfully created!");
